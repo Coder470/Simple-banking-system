@@ -12,7 +12,7 @@ This Python script simulates a simple banking system where people can create/log
 
 4. Log in by entering the same name and password you did prior.
 
-Main Menu Options:
+# Main Menu Options:
 
 1. Show Balance:  Shows current balance.
 2. Deposit:  Adds money your account.
