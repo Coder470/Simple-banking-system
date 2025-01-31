@@ -1,4 +1,4 @@
-#Bank 
+# Bank 
 
 Run the script in a Python environment.
 Sign up by entering "yes" when prompted and providing your name.
