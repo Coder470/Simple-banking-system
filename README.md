@@ -21,7 +21,7 @@ This Python script simulates a simple banking system where people can create/log
 
 # Notes
 
-. The balance starts at £0
+. The balance starts at £0.
 
 . Deposits and withdrawals require numeric inputs.
 
