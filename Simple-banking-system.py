@@ -1,5 +1,4 @@
-
-sign = input("Would you like to sign up to a Bank? (yes, no) ")
+sign = input("Would you like to sign up for Bank? (yes, no) ")
 if sign == "yes":
       name = input("What is your name? ")
 else:
@@ -19,8 +18,11 @@ while True:
         if login_name == name:
             print("Correct")
             break
+    elif login == "no":
+        exit()
     else:
-        print("Invalid. Try again")
+        print("Invalid. Try again.")
+    
 while True:
     login_password = input("What is the password to the account: ")
     if login_password == create_password:
