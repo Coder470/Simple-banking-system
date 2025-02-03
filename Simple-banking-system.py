@@ -1,9 +1,11 @@
+import sys
+
 # Signing up
 sign = input("Would you like to sign up for Bank? (yes, no) ")
 if sign == "yes":
       name = input("What is your name? ")
 else:
-    exit()
+    sys.exit()
 # Creating Password
 while True:
     create_password = input("Please create a password that contains a minium of 4 letters: ")
