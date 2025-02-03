@@ -1,8 +1,10 @@
+# Signing up
 sign = input("Would you like to sign up for Bank? (yes, no) ")
 if sign == "yes":
       name = input("What is your name? ")
 else:
     exit()
+# Creating Password
 while True:
     create_password = input("Please create a password that contains a minium of 4 letters: ")
     if len(create_password) >= 4:
@@ -10,7 +12,7 @@ while True:
          break
     else:
          print("Password is too short. Try again.")
-
+# Logging in (Username)
 while True:
     login = input("Would you like to login to your account? (yes, no) ")
     if login == "yes":
@@ -22,7 +24,7 @@ while True:
         exit()
     else:
         print("Invalid. Try again.")
-    
+# Logging in (Password)
 while True:
     login_password = input("What is the password to the account: ")
     if login_password == create_password:
@@ -31,7 +33,7 @@ while True:
         break
     else:
         print("Incorrect.")
-
+# Bank Account
 print()
 print()
 
