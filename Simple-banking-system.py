@@ -1,97 +1,61 @@
-import sys
+import random
 
-def Creating_Username():
-# Signing up
-    sign = input("Would you like to sign up for Bank? (yes, no) ")
-    if sign == "yes":
-        name = input("What is your name? ")
-        return name
-    else:
-        sys.exit()
-
-def Creating_Password():
-# Creating Password
-    while True:
-        create_password = input("Please create a password that contains a minium of 4 letters: ")
-        if len(create_password) >= 4:
-            print("Creating Account..")
-            return create_password
-        else:
-            print("Password is too short. Try again.")
-
-def Username_Check(Username):
-# Logging in (Username)
-    while True:
-        login = input("Would you like to login to your account? (yes, no) ")
-        if login == "yes":
-            login_name = input("What is the name? ")
-            if login_name == Username:
-                print("Correct")
-                break
-        elif login == "no":
-            sys.exit()
-        else:
-            print("Invalid. Try again.")
-
-def Password_Check(Password):
-# Logging in (Password)
-    while True:
-        login_password = input("What is the password to the account: ")
-        if login_password == Password:
-            print("Correct.")
-            print("Logging in...")
-            break
-        else:
-            print("Incorrect.")
-
-def Bank_Account(Username):
-# Bank Account
-    print()
+def Welcome_Message():
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
+    print("You have 5 chances to guess the correct number.")
     print()
 
-    print(f"Welcome {Username}")
-    print()
 
-    money = 0
+def difficulty_select():
+    print("Please select the difficulty level: ")
+    print("1. Easy (10 chances)")
+    print("2. Medium (5 chances)")
+    print("3. Hard (3 chances)")
+
     while True:
-        print("1. Show Balance")
-        print("2. Deposit")
-        print("3. Withdraw")
-        print("4. Exit")
-        options = input("select one of the following numbers (1, 2, 3, 4) ")
-        print()
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            print("\nGreat! You have selected the Easy difficulty level.")
+            print("Let's start the game!")
+            return 10 #Easy mode
+        
+        elif choice == "2":
+            print()
+            print("Great! You have selected the Medium difficulty level.")
+            print("Let's start the game!")
+            return 5 #Medium Mode
+        
+        elif choice == "3":
+            print()
+            print("Great! You have selected the Hard difficulty level.")
+            print("Let's start the game!")
+            return 3   #Hard Mode
+    
 
-        if options == "1":
-            print(f"Your balance is £{money}")
+def number_guess_generator():
+    number = random.randint(1,100)
+    return number
 
-        elif options == "2":
-            depositStr = input("Pick a number to deposit some money: ")
-            if depositStr.isdigit():
-                deposit = int(depositStr)
-                money = money + deposit
-                print(f"You have deposited £{deposit}")
-            else:
-                print("Invalid")
-
-        elif options == "3":
-            withdrawStr = input("Pick a number to withdraw some money: ")
-            if withdrawStr.isdigit():
-                withdraw = int(withdrawStr)
-                if money >= withdraw:
-                    money = money - withdraw
-                    print(f"You have withdrawn £{withdraw}")
-                else:
-                    print("You do not have enough.")    
-            else:
-                print("Invalid")
-
-        elif options == "4":
-            print("Goodbye :( ")
+def guessing(attempts,number):
+    Guess = int(input("Enter your guess: "))
+    while attempts > 0:
+        if Guess < number:
+            print(f"Incorrect! The number is greater than {Guess}.")
+            attempts -= 1
+        elif Guess > number:
+            print(f"Incorrect! The number is less than {Guess}")
+            attempts -= 1
+        elif Guess == number:
+            print("Congratulations! You guessed the correct number")
             break
 
-#Game Execution
-Username = Creating_Username()
-Password = Creating_Password()
-Username_Check(Username)
-Password_Check(Password)
-Bank_Account(Username)
+        Guess = int(input("Enter your guess: "))
+
+if __name__ == "__main__":
+
+    #Game execution
+    Welcome_Message()
+    attempts = difficulty_select()
+    number = number_guess_generator()
+    guessing(attempts,number)
