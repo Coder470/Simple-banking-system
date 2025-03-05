@@ -54,10 +54,15 @@ def Bank_Account(Username):
 
     money = 0
     while True:
-        print("1. Show Balance")
-        print("2. Deposit")
-        print("3. Withdraw")
-        print("4. Exit")
+        print("╭───────────────────╮")
+        print("│ 1. Show Balance   │")
+        print("│ ──────────────────│")
+        print("│ 2. Deposit        │")
+        print("│ ──────────────────│")
+        print("│ 3. Withdraw       │")
+        print("│ ──────────────────│")
+        print("│ 4. Exit           │")
+        print("╰───────────────────╯")
         options = input("select one of the following numbers (1, 2, 3, 4) ")
         print()
 
