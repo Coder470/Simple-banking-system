@@ -2,7 +2,7 @@ import sys
 
 def Creating_Username():
 # Signing up
-    sign = input("Would you like to sign up for Bank? (yes, no) ")
+    sign = input("Would you like to sign up for a Bank? (yes, no) ")
     if sign == "yes":
         name = input("What is your name? ")
         return name
@@ -49,7 +49,9 @@ def Bank_Account(Username):
     print()
     print()
 
-    print(f"Welcome {Username}")
+    print(" ────────────────────")
+    print(f"│ Username: {Username}        │")
+    print(" ────────────────────")
     print()
 
     money = 0
